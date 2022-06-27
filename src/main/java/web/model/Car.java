@@ -1,5 +1,7 @@
 package web.model;
 
+// 2. Создайте модель Car с тремя произвольными полями
+
 public class Car {
     private String make;
     private String model;
