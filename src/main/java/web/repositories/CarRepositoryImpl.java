@@ -2,8 +2,7 @@ package web.repositories;
 
 import web.model.Car;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class CarRepositoryImpl implements CarRepository {
     @Override
@@ -21,5 +20,16 @@ public class CarRepositoryImpl implements CarRepository {
     @Override
     public Integer gelCountAllCars() {
         return getAllCars().size();
+    }
+
+    @Override
+    public List<Car> getHowManyCars(int count) {
+        if (count < gelCountAllCars() && count > 0) {
+            return getAllCars().subList(0, count);
+        } else if (count >= gelCountAllCars()) {
+            return getAllCars();
+        } else {
+            return new ArrayList<>();
+        }
     }
 }

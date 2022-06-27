@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>full list of cars</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h2>List of cars</h2>
+</div>
+<br>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th th:text="MAKE">NameMake</th>
+            <th th:text="MODEL">NameModel</th>
+            <th th:text="PRICE">Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="prod: ${cars}">
+            <td th:text="${prod.getMake()}">Make</td>
+            <td th:text="${prod.getModel()}">Model</td>
+            <td th:text="${#numbers.formatDecimal(prod.price, 1,'WHITESPACE', 2, 'COMMA')}">0.99</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

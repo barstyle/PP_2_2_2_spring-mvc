@@ -39,4 +39,13 @@ public class Car {
     public void setPrice(Double price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Car {" +
+               "make = '" + make + '\'' +
+               ", model = '" + model + '\'' +
+               ", price = " + price +
+               '}';
+    }
 }

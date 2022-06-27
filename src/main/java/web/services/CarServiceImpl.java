@@ -24,4 +24,9 @@ public class CarServiceImpl implements CarService{
     public Integer gelCountAllCars() {
         return carRepository.gelCountAllCars();
     }
+
+    @Override
+    public List<Car> getHowManyCars(int count) {
+        return carRepository.getHowManyCars(count);
+    }
 }
