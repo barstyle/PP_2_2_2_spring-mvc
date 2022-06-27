@@ -29,7 +29,9 @@ public class CarRepositoryImpl implements CarRepository {
         } else if (count >= gelCountAllCars()) {
             return getAllCars();
         } else {
-            return new ArrayList<>();
+            List<Car> carList = new ArrayList<>();
+            carList.add(new Car("Empty", "empty", 0.0));
+            return carList;
         }
     }
 }
