@@ -8,6 +8,7 @@ import java.util.List;
 public class CarRepositoryImpl implements CarRepository {
     @Override
     public List<Car> getAllCars() {
+        //3. Создайте список из 5 машин.
         List<Car> carList = new ArrayList<>();
         carList.add(new Car("Mazda", "CX-30", 32_060.330));
         carList.add(new Car("Mazda", "CX-50", 39_190.690));
